@@ -30,7 +30,7 @@ public class MainCalc {
         EnumCulcOperations operation = EnumCulcOperations.valueOfBySign(signStr);
         int a = Integer.parseInt(digits[0]);
         int b = Integer.parseInt(digits[1]);
-        if (a > 10 || b > 10) {
+        if (a > 10 || b > 10 && a * b != 0) {
             throw new IllegalArgumentException("Input is not correct");
         }
         int res = Objects.requireNonNull(operation).calculate(a, b);
